@@ -1,0 +1,16 @@
+torneosReplicaSete = new ReplSetTest({name: "ConmebolReplica", nodes: 3});print("Realizado")
+torneosReplicaSete.startSet()
+torneosReplicaSete.initiate()
+conn=new Mongo("C0579P10N108:20000")
+testDB=conn.getDB("Conmebol_libertadoresdb")
+
+testDB.Equipos.insert({
+   "equipo_id": "e009",
+   "nombre": "Club Atlético Huracán",
+   "pais": "Argentina",
+   "ciudad": "Buenos Aires",
+   "fundado": 1908
+});
+
+connSecondary=new Mongo("C0579P10N108:20000")
+torneosReplicaSet.stopSet()
