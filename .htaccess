@@ -1,0 +1,39 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+RewriteEngine On
+
+# Verifica si el archivo "category.html" no existe
+RewriteCond %{REQUEST_URI} ^/index [NC]
+RewriteCond %{DOCUMENT_ROOT}/index.html !-f}
+RewriteRule ^index$ /404.html [L]
+
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Verifica si "cotizador.html" no existe y redirige a 404.html
+RewriteCond %{REQUEST_URI} ^/cotizador$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/cotizador.html !-f
+RewriteRule ^cotizador$ /404.html [L]
+
+# Verifica si "policie.html" no existe y redirige a 404.html
+RewriteCond %{REQUEST_URI} ^/policie$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/policie.html !-f
+RewriteRule ^policie$ /404.html [L]
+
+# Verifica si "category.html" no existe y redirige a 404.html
+RewriteCond %{REQUEST_URI} ^/category$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/category.html !-f
+RewriteRule ^category$ /404.html [L]
+
+# Verifica si "contact.html" no existe y redirige a 404.html
+RewriteCond %{REQUEST_URI} ^/contact$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/contact.html !-f
+RewriteRule ^contact$ /404.html [L]
+
+
+
